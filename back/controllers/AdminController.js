@@ -205,7 +205,6 @@ const kpi_ganancias_mensuales_admin  = async function(req,res){
                     diciembre = diciembre + item.subtotal;
                    }
                }
-            
                
            }
 

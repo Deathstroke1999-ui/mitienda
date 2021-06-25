@@ -5,12 +5,13 @@ import { AdminService } from 'src/app/services/admin.service';
 declare var jQuery:any;
 declare var $:any;
 declare var iziToast;
-
+//////////
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+//////////
 export class LoginComponent implements OnInit {
 
   public user : any = {};
