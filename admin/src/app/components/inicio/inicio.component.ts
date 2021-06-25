@@ -14,7 +14,7 @@ export class InicioComponent implements OnInit {
   public total_mes = 0;
   public total_mes_anterior = 0;
   public count_ventas = 0;
-
+///////////
   constructor(
     private _adminService:AdminService
   ) { 
