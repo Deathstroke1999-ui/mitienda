@@ -27,6 +27,10 @@ export class ClienteService {
     return this._http.post(this.url+'login_cliente',data,{headers:headers});
   }
 
+  registro_cliente(data,token):Observable<any>{
+    let headers = new HttpHeaders().set('Content-Type','application/json');
+    return this._http.post(this.url+'registro_cliente',data,{headers:headers});
+  }
   obtener_cliente_guest(id,token):Observable<any>{
     let headers = new HttpHeaders({'Content-Type':'application/json','Authorization':token});
     return this._http.get(this.url+'obtener_cliente_guest/'+id,{headers:headers});
@@ -127,14 +131,14 @@ export class ClienteService {
   get_token_culqi(data):Observable<any>{
     let headers = new HttpHeaders()
     .set('Content-Type','application/json')
-    .set('Authorization','Bearer pk_test_0b07aceaa3de8c43');
+    .set('Authorization','Bearer pk_test_1d00c4eba226a91c');
     return this._http.post('https://secure.culqi.com/v2/tokens',data,{headers:headers});
   }
   
   get_charge_culqi(data):Observable<any>{
     let headers = new HttpHeaders()
     .set('Content-Type','application/json')
-    .set('Authorization','Bearer sk_test_56683314fd8a5328');
+    .set('Authorization','Bearer sk_test_58b15cee172924d8');
     return this._http.post('https://api.culqi.com/v2/charges',data,{headers:headers});
   }
 

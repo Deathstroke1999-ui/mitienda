@@ -111,7 +111,7 @@ export class CarritoComponent implements OnInit {
             purchase_units : [{
               description : 'Pago en Mi Tienda',
               amount : {
-                currency_code : 'USD',
+                currency_code : 'PEN',
                 value: this.subtotal
               },
             }]
@@ -246,7 +246,7 @@ export class CarritoComponent implements OnInit {
        
         let charge = {
           "amount": this.subtotal+'00',
-          "currency_code": "USD",
+          "currency_code": "PEN",
           "email": this.user.email,
           "source_id": response.id,
         }

@@ -12,8 +12,9 @@ export class LoginComponent implements OnInit {
 
   public user : any = {};
   public usuario : any = {};
-  public token;
+  public token:any;
 
+  public load_btn = false;
 
   constructor(
     private _clienteService: ClienteService,
@@ -74,5 +75,49 @@ export class LoginComponent implements OnInit {
           message: 'Los datos del formulario no son validos'
       });
     }
+  }
+  registro(registroForm){
+      if(registroForm.valid){
+        console.log(this.user);
+        this.load_btn = true;
+        this._clienteService.registro_cliente(this.user,this.token).subscribe(
+          response=>{
+            console.log(response);
+            iziToast.show({
+                title: 'SUCCESS',
+                titleColor: '#1DC74C',
+                color: '#FFF',
+                class: 'text-success',
+                position: 'topRight',
+                message: 'Se registro correctamente el nuevo cliente, por favor inicia sesion.'
+            });
+
+            this.user = {
+             
+              nombres: '',
+              apellidos: '',
+              email: '',
+              password: '',
+            
+            }
+         
+            this.load_btn = false;
+
+            this._router.navigate(['/login']);
+          },
+          error=>{
+            console.log(error);
+          }
+        );
+      }else{
+        iziToast.show({
+            title: 'ERROR',
+            titleColor: '#FF0000',
+            color: '#FFF',
+            class: 'text-danger',
+            position: 'topRight',
+            message: 'Los datos del formulario no son validos'
+        });
+      }
   }
 }

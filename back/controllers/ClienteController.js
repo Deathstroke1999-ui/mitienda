@@ -402,7 +402,7 @@ const obtener_reviews_cliente  = async function(req,res){
 
 
 module.exports = {
-    registro_cliente,
+
     login_cliente,
     listar_clientes_filtro_admin,
     registro_cliente_admin,
@@ -420,5 +420,5 @@ module.exports = {
     obtener_detalles_ordenes_cliente,
     emitir_review_producto_cliente,
     obtener_review_producto_cliente,
-    obtener_reviews_cliente
+    obtener_reviews_cliente,    registro_cliente
 }

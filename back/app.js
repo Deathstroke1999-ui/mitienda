@@ -66,4 +66,5 @@ app.use('/api',carrito_route);
 app.use('/api',venta_route);
 app.use('/api',descuento_route);
 
-module.exports = app;
+module.exports = app;   
+
